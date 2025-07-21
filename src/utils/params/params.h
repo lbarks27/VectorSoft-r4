@@ -29,20 +29,26 @@
 
 //SYSTEM-WIDE CONFIGURATION
 
-enum class SysMode {
+enum class SysState {
 	Drone,
 	Rocket,
 	Hybrid
 };
 
-extern SysMode sys_mode;
+extern SysState sys_state;
 
 // Feature enable flags
-extern bool enable_esc_outputs;
+extern bool enable_esc;
 extern bool enable_tvc;
 extern bool enable_pyros;
 extern bool enable_logging;
 extern bool enable_telemetry;
+extern bool enable_debug;
+extern bool enable_SITL;
+extern bool enable_ground_test;
+extern bool debug_mode;
+#define DBG_PRINTLN(msg)    if (DEBUG_MODE) { Serial.println(msg); }
+#define DBG_PRINT(msg)      if (DEBUG_MODE) { Serial.print(msg); }
 
 
 //TUNABLE PARAMETERS & LIMITS
