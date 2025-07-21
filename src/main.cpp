@@ -1,18 +1,26 @@
+#include <TeensyThreads.h>
 #include <Arduino.h>
+#include "utils/timing.h"
+#include "utils/params/params.h"
 
-// put function declarations here:
-int myFunction(int, int);
+// Thread stubs
+void setAngle() {
+    if (enable_ground_test) {
+        Serial.println("[TVC] BLOCKED: Ground test mode.");
+        return;
+    }
+    // real output code
+}
+void guidThread() { while (true) { Serial.println("[GUID]"); threads.delay(50); } }
+void ctrlThread() { while (true) { Serial.println("[CTRL]"); threads.delay(10); } }
 
 void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+    Serial.begin(115200);
+    while (!Serial && millis() < 4000) ; // Teensy USB wait
+    threads.addThread(setAngle);
+    threads.addThread(guidThread);
+    threads.addThread(ctrlThread);
 }
-
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+    delay(1000); // Optionally blink LED or print heartbeat
 }
