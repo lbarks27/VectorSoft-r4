@@ -27,16 +27,6 @@
 
 #pragma once
 
-//SYSTEM-WIDE CONFIGURATION
-
-enum class SysState {
-	Drone,
-	Rocket,
-	Hybrid
-};
-
-extern SysState sys_state;
-
 // Feature enable flags
 extern bool enable_esc;
 extern bool enable_tvc;
@@ -62,18 +52,6 @@ extern bool debug_mode;
 #define SAFETY_MIN_THRUST 0.1f
 
 // Future tunable parameters can be added here
-
-
-//COMPILE-TIME CONSTANTS
-
-// Physical constants
-#define GRAVITY_M_S2 9.80665f
-
-// Conversion factors
-#define DEG2RAD (3.14159265358979323846f / 180.0f)
-
-// Mathematical tolerances
-#define EPSILON 1e-6f
 
 
 //EXTERNAL CONFIG REFERENCES

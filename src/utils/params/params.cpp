@@ -15,8 +15,5 @@ bool debug_mode = true;
 float TVC_MAX_ANGLE = 25.0f;  // degrees
 float CONTROL_LOOP_HZ = 200.0f;
 
-// System mode - start in ground test or disarmed state
-SysState sys_state = SysState::Drone;
-
 // Add additional variables as needed
 // e.g., float MAX_ALLOWED_TILT_DEG = 45.0f;
