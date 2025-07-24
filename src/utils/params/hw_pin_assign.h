@@ -1,5 +1,7 @@
 #pragma once
 
+#define FLVSS_SERIAL Serial4
+
 //Actuators
 #define TVC_SERVO1_PIN     3
 #define TVC_SERVO2_PIN     4
@@ -16,9 +18,6 @@
 #define IMU_SDA_PIN        18
 #define IMU_SCL_PIN        19
 #define IMU_INT_PIN        20
-
-//SD
-#define SD_CS_PIN          10
 
 //Telemetry
 #define RF_TX_PIN          12

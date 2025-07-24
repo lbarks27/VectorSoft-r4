@@ -29,7 +29,6 @@
 #pragma once
 
 #include <Arduino.h>
-#include "peripherals/sensors/imu/imu_base.h"   // For IMUOrientation and helpers
 
 // ===================== FEATURE ENABLE FLAGS =====================
 extern bool enable_esc;
@@ -58,9 +57,21 @@ constexpr float SAFETY_MIN_THRUST     = 0.1f;
 
 // Future tunable parameters can be added here (PID gains, rates, etc.)
 
-// ===================== IMU ORIENTATION CONFIG =====================
-// Example for two IMUs (expand as needed)
-constexpr IMUOrientation IMU0_ORIENTATION = IMUOrientation::FORWARD_UP;
+constexpr int NUM_ESC_CHANNELS = 3; // Update as needed
+constexpr int ESC_PINS[NUM_ESC_CHANNELS] = {3, 4, 5}; // Your ESC PWM pins
+
+// Per-ESC calibration values
+constexpr int ESC_PWM_MIN[NUM_ESC_CHANNELS] = {1040, 1060, 1020};
+constexpr int ESC_PWM_MAX[NUM_ESC_CHANNELS] = {1960, 1980, 1950};
+constexpr float ESC_THRUST_MIN[NUM_ESC_CHANNELS] = {0.0f, 0.0f, 0.0f};
+constexpr float ESC_THRUST_MAX[NUM_ESC_CHANNELS] = {2.5f, 2.3f, 2.4f};
+constexpr bool ENABLE_ESC[NUM_ESC_CHANNELS] = {true, true, true};
+constexpr bool TEST_MODE = false; // false for flight hardware
+
+constexpr int SD_CS_PIN = 10;    // SD card CS pin
+
+#define IMU_I2C_ADDR 0x28
+#define IMU_I2C_PORT &Wire  // or &Wire1 for alternate ports
 
 // ===================== SYSTEM IDENTITY & VERSIONING =====================
 constexpr const char* FIRMWARE_VERSION = "v1.0.0";
