@@ -48,7 +48,7 @@ extern bool debug_mode;
 // ===================== TUNABLE PARAMETERS & LIMITS =====================
 
 // TVC limits (degrees)
-constexpr float TVC_MAX_DEFLECTION = 45.0f;
+constexpr float TVC_MAX_DEFLECTION = 30.0f;
 
 // Safety thresholds
 constexpr float SAFETY_ABORT_TILT_DEG = 30.0f;

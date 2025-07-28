@@ -1,4 +1,4 @@
-#include "navigation_manager.h"
+#include "gnc/guidance/manager/navigation_manager.h"
 
 namespace GNC {
 
