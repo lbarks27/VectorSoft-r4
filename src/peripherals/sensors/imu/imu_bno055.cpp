@@ -1,4 +1,4 @@
-#include "imu_bno055.h"
+#include "peripherals/sensors/imu/imu_bno055.h"
 #include <Wire.h>
 #include <Arduino.h>
 

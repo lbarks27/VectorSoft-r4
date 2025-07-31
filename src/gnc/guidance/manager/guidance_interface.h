@@ -3,27 +3,27 @@
 #include <cstdint>
 #include "utils/math/math_utils.h"
 
-enum class controlOpMode {
+enum class guidanceOpMode {
     STUB,
     GROUND,
     MULTI_TVC,
     DIFF_THROTTLE,
 };
 
-struct controlInput {
+struct guidanceInput {
     float roll, pitch, yaw;
     Vector3 position; // Position in meters
     float throttle;
     uint32_t timestamp_us;
 };
 
-struct controlOutput {
+struct guidanceOutput {
     float roll, pitch, yaw;
     Vector3 position; // Position in meters
     float throttle;
     uint32_t timestamp_us;
 };
 
-struct controlTelemetry {
+struct guidanceTelemetry {
 
 };

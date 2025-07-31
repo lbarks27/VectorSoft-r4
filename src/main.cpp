@@ -11,7 +11,7 @@ void setup() {
 
   // Initialize RFD-900x link
   // Typical RFD default is 57600 or 115200 baud—match your module config
-  RFD_SERIAL.begin(57600);
+  RFD_SERIAL.begin(115200);
   Serial.println("RFD link on Serial1 at 57600");
 
   // Initialize Cube Orange MAVLink link

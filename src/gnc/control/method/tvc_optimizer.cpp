@@ -1,5 +1,5 @@
 // tvc_optimizer.cpp
-#include "gnc/control/tvc_optimizer.h"
+#include "gnc/control/method/tvc_optimizer.h"
 #include "utils/math/math_utils.h"   // <-- Use new math utilities
 #include <Arduino.h>
 #include <Servo.h>
